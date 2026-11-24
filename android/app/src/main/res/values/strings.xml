@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TLU Lịch Học</string>
+    <string name="title_activity_main">TLU Lịch Học</string>
+    <string name="package_name">vn.tlu.lichhoc</string>
+    <string name="custom_url_scheme">vn.tlu.lichhoc</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "TLU Lịch Học",
+  "description": "Ứng dụng xem thời khóa biểu sinh viên Đại học Thủy lợi (TLU) ngoại tuyến — tải trọn cả học kỳ một lần và xem mọi lúc không cần mạng.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

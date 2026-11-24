@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Baloo 2", "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Soft milky sakura-blush & mint pastel canvas (hồng phấn cute) */
+.kawaii-canvas {
+  background-color: #fff0f6;
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(255, 206, 227, 0.72) 0%, transparent 40%),
+    radial-gradient(circle at 92% 14%, rgba(186, 245, 236, 0.5) 0%, transparent 38%),
+    radial-gradient(circle at 12% 88%, rgba(255, 214, 232, 0.72) 0%, transparent 42%),
+    radial-gradient(circle at 90% 86%, rgba(204, 244, 250, 0.5) 0%, transparent 40%),
+    linear-gradient(180deg, #ffeaf3 0%, #fff5f9 50%, #ffedf5 100%);
+}
+
+.dark .kawaii-canvas {
+  background-color: #161026;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(249, 168, 212, 0.16) 0%, transparent 38%),
+    radial-gradient(circle at 90% 15%, rgba(94, 234, 212, 0.12) 0%, transparent 36%),
+    radial-gradient(circle at 85% 90%, rgba(192, 132, 252, 0.14) 0%, transparent 40%),
+    linear-gradient(180deg, #161026 0%, #1d1533 52%, #151126 100%);
+}
+
+/* Soft pastel baby-pink outlined bubbly wordmark */
+.kawaii-logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: #ffa6cb;
+  -webkit-text-stroke: 1.8px #c9688f;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #e59ab8;
+}
+
+.dark .kawaii-logo-text {
+  color: #fbcfe8;
+  -webkit-text-stroke: 1.4px #5e2242;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #5e2242;
+}
+
+/* Airy pastel baby-pink to mint gradient outlined display date */
+.kawaii-date-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  background-image: linear-gradient(95deg, #ffa8cd 0%, #ffcce3 48%, #9ef2e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #cf7197;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 1.5px 0 rgba(214, 127, 162, 0.28));
+}
+
+.dark .kawaii-date-text {
+  background-image: linear-gradient(95deg, #fbcfe8 0%, #f9a8d4 50%, #99f6e4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px #5c2240;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.35));
+}
+
+/* 3D offset soft baby-pink bordered day card */
+.kawaii-day-card {
+  border: 2px solid #f3a4c3;
+  box-shadow: 0 3.5px 0 #f6bdd4;
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1), background 160ms ease;
+}
+
+.kawaii-day-card:active {
+  transform: translateY(2px);
+  box-shadow: 0 1.5px 0 #f6bdd4;
+}
+
+.dark .kawaii-day-card {
+  border-color: #f9a8d4;
+  box-shadow: 0 4px 0 #7a2650;
+}
+
+.dark .kawaii-day-card:active {
+  box-shadow: 0 2px 0 #7a2650;
+}
+
+/* Soft strawberry-outlined white number on active pastel day card */
+.kawaii-day-number-active {
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px #d4749b;
+  paint-order: stroke fill;
+  text-shadow: 0 1.5px 0 #d4749b;
+}
+
+.dark .kawaii-day-number-active {
+  color: #ffffff;
+  -webkit-text-stroke: 1.2px #5c2240;
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #5c2240;
+}
+
+/* Milky sakura-mint pill CTA button with gentle 3D bottom lip */
+.kawaii-pill-cta {
+  background-image: linear-gradient(100deg, #ffbdd9 0%, #ffe2f0 50%, #baf6ee 100%);
+  border: 2px solid #f19ec0;
+  box-shadow: 0 3px 0 #f5bad2;
+  color: #7a3b59;
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kawaii-pill-cta:hover {
+  filter: brightness(1.02);
+}
+
+.kawaii-pill-cta:active {
+  transform: translateY(1.5px);
+  box-shadow: 0 1.5px 0 #f5bad2;
+}
+
+.dark .kawaii-pill-cta {
+  background-image: linear-gradient(100deg, #f9a8d4 0%, #f472b6 55%, #5eead4 100%);
+  border-color: #fbcfe8;
+  box-shadow: 0 3px 0 #7a2650;
+  color: #2b0f1f;
+}
+
+/* Soft pastel dashed stationery class cards */
+.kawaii-card-blush {
+  border: 2px dashed #f4b6d0;
+  background-image: linear-gradient(135deg, #fff4f8 0%, #fffafd 60%, #fff0f6 100%);
+}
+
+.kawaii-card-mint {
+  border: 2px dashed #f4b6d0;
+  background-image: linear-gradient(115deg, #fff4f8 0%, #faf9ff 48%, #e4faf6 100%);
+}
+
+.dark .kawaii-card-blush {
+  border: 2px dashed rgba(249, 168, 212, 0.5);
+  background-image: linear-gradient(135deg, rgba(56, 30, 66, 0.92) 0%, rgba(42, 26, 58, 0.92) 100%);
+}
+
+.dark .kawaii-card-mint {
+  border: 2px dashed rgba(94, 234, 212, 0.45);
+  background-image: linear-gradient(115deg, rgba(52, 28, 66, 0.92) 0%, rgba(28, 46, 62, 0.92) 100%);
+}
+
+/* Soft floating animation for chibi & sparkles */
+@keyframes kawaii-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.kawaii-float-slow {
+  animation: kawaii-float 3.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kawaii-float-slow {
+    animation: none;
+  }
+}
+
+.pt-safe {
+  padding-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+}
+
+.pb-safe {
+  padding-bottom: max(0.25rem, var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px)));
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
